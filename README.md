@@ -72,7 +72,7 @@ Cumplimiento del plazo, contando también las órdenes abiertas atrasadas: **86,
 
 # El tablero
 
-![Tablero interactivo Web App](https://order-pulse-reconciliation-hub.lovable.app)
+[Tablero interactivo Web App](https://order-pulse-reconciliation-hub.lovable.app)
 
 Cada excepción se puede filtrar, ordenar, copiar como ticket listo para enviar al área responsable, y marcar como gestionada.
 
