@@ -24,7 +24,7 @@ Este proyecto sigue **1.500 órdenes simuladas** por ese camino y responde tres 
 
 # Hallazgo 1: el indicador oficial se ve mejor de lo que es
 
-![El cumplimiento del SLA se ve mejor de lo que es](images/01_sla_punto_ciego.png)
+![El cumplimiento del SLA se ve mejor de lo que es](graphs/01_sla_punto_ciego.png)
 
 **Qué significa:** el indicador solo cuenta las órdenes que ya terminaron. Un equipo que nunca se activa jamás "termina", así que nunca aparece. Al sumar las **149 órdenes que siguen abiertas y ya van tarde**, el cumplimiento baja de 86,5% a 77,2%.
 
@@ -32,7 +32,7 @@ Este proyecto sigue **1.500 órdenes simuladas** por ese camino y responde tres 
 
 # Hallazgo 2: el tiempo se pierde en el transporte
 
-![El tiempo se pierde en el transporte](images/02_tiempo_por_etapa.png)
+![El tiempo se pierde en el transporte](graphs/02_tiempo_por_etapa.png)
 
 **Qué significa:** el objetivo es activar en 4 días hábiles. Las ciudades principales lo cumplen (3,0 días). Las intermedias no (4,3 días), y la diferencia está casi toda en el transporte. Entre las transportadoras no hay diferencias relevantes; lo que cambia es la ciudad.
 
@@ -42,7 +42,7 @@ Cumplimiento del plazo, contando también las órdenes abiertas atrasadas: **86,
 
 # Hallazgo 3: el camino de la orden
 
-![De 1.500 pagos, 1.226 equipos llegan a vender](images/03_embudo.png)
+![De 1.500 pagos, 1.226 equipos llegan a vender](graphs/03_embudo.png)
 
 **Qué significa:** 146 comercios pagaron pero no pasaron la validación. La razón más común de rechazo (44%) es un **documento ilegible**, algo que se puede evitar desde el momento de la carga.
 
@@ -50,11 +50,11 @@ Cumplimiento del plazo, contando también las órdenes abiertas atrasadas: **86,
 
 # Hallazgo 4: el dinero se queda atrapado en tres lugares
 
-![Tres puntos donde el dinero se queda atrapado](images/04_tres_fugas.png)
+![Tres puntos donde el dinero se queda atrapado](graphs/04_tres_fugas.png)
 
 **Qué significa:** cada barra mide algo distinto, por eso no se suman. Los **87 equipos sin circular** se dividen en 65 entregados hace más de 15 días sin activar y 22 en tránsito sin novedad de la transportadora hace más de 5 días.
 
-![63 órdenes no cuadran entre la factura y el banco](images/05_descuadres.png)
+![63 órdenes no cuadran entre la factura y el banco](graphs/05_descuadres.png)
 
 **Qué significa:** de 1.489 órdenes ya liquidadas, el 95,8% cuadra exacto. Las otras 63 son pagos que no llegaron, pagos parciales, cobros duplicados y pagos sin factura. Los cobros de más son una obligación: hay que devolverlos.
 
@@ -72,9 +72,7 @@ Cumplimiento del plazo, contando también las órdenes abiertas atrasadas: **86,
 
 # El tablero
 
-![Vista general del tablero](images/dashboard_vista_general.png)
-
-![Tabla de excepciones con acciones rápidas](images/dashboard_tabla.png)
+![Tablero interactivo Web App](https://order-pulse-reconciliation-hub.lovable.app)
 
 Cada excepción se puede filtrar, ordenar, copiar como ticket listo para enviar al área responsable, y marcar como gestionada.
 
@@ -88,9 +86,6 @@ Cada excepción se puede filtrar, ordenar, copiar como ticket listo para enviar 
 |---|---|
 | `salesops_control_tower.ipynb` | Genera los datos, audita con SQL, valida los resultados, calcula los indicadores y crea el reporte |
 | `01_sla_and_reconciliation.sql` | Las dos consultas SQL principales |
-| `Ops_Exceptions_Report.xlsx` | Reporte de ejemplo con una pestaña por área (logística, finanzas, comercial) y un ticket por fila |
-| `orders_master.csv` | Una fila por orden; es lo que lee el tablero |
-| `lovable_prompt.md` | Instrucciones para reconstruir el tablero en Lovable |
 
 Tres decisiones que vale la pena conocer:
 
